@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: - Outlets
+    @IBOutlet weak var movieSearchBar: UISearchBar!
+    @IBOutlet weak var movieListTV: UITableView!
+    
+    //MARK: - Local Variables
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 

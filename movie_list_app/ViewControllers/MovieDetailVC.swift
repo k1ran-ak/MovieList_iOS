@@ -9,21 +9,25 @@ import UIKit
 
 class MovieDetailVC: UIViewController {
 
+    //MARK: - Outlets
+    
+    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieNameLbl: UILabel!
+    @IBOutlet weak var movieDurationLbl: UILabel!
+    @IBOutlet weak var movieDateLbl: UILabel!
+    @IBOutlet weak var movieGenresLbl: UILabel!
+    @IBOutlet weak var movieRatingLbl: UILabel!
+    @IBOutlet weak var movieAboutLbl: UILabel!
+    @IBOutlet weak var movieCastLbl: UILabel!
+    
+    //MARK: - Local Variables
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+  
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

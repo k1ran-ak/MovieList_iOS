@@ -50,6 +50,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZC2-1m-0dk"/>
+                    <connections>
+                        <outlet property="movieListTV" destination="Wu3-HC-lNJ" id="x4t-qe-Kmc"/>
+                        <outlet property="movieSearchBar" destination="1n3-Ki-aWD" id="SkO-Ba-17L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +166,16 @@
                             <constraint firstItem="klj-rQ-ZSW" firstAttribute="bottom" secondItem="fOy-Hj-Tse" secondAttribute="bottom" id="mcj-rF-JMS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieAboutLbl" destination="x5K-OK-oaS" id="DpO-3L-Hmn"/>
+                        <outlet property="movieCastLbl" destination="lYP-h5-gfk" id="SIT-8i-klR"/>
+                        <outlet property="movieDateLbl" destination="VAY-EK-LDf" id="fhy-b3-30y"/>
+                        <outlet property="movieDurationLbl" destination="jeO-SQ-Ap3" id="Ft0-5z-Dbv"/>
+                        <outlet property="movieGenresLbl" destination="bGs-OV-30j" id="AbI-fc-NAW"/>
+                        <outlet property="movieImage" destination="pln-gq-bb8" id="2As-Sk-kGb"/>
+                        <outlet property="movieNameLbl" destination="nkN-uP-H5K" id="EWf-Ck-zyF"/>
+                        <outlet property="movieRatingLbl" destination="tBa-Pi-ZNA" id="FfL-a7-wGd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ej-40-Ore" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
