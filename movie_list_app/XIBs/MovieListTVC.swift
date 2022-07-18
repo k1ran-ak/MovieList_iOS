@@ -9,6 +9,12 @@ import UIKit
 
 class MovieListTVC: UITableViewCell {
 
+    //MARK: - Outlets
+    
+    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieNameLbl: UILabel!
+    @IBOutlet weak var movieRatingLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

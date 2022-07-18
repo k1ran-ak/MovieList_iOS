@@ -21,6 +21,7 @@ class MovieDetailVC: UIViewController {
     @IBOutlet weak var movieCastLbl: UILabel!
     
     //MARK: - Local Variables
+    var movieDetailModal : MovieModal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
