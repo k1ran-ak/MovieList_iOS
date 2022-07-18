@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Movie List"
+        self.movieSearchBar.placeholder = "Search a Movie"
         self.movieListTV.delegate = self
         self.movieListTV.dataSource = self
         self.movieSearchBar.delegate = self
@@ -42,6 +43,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.movieListModal = data
             self.activityIndicator.stopAnimating()
             self.activityIndicator.removeFromSuperview()
+            self.movieListTV.reloadData()
+        }
+    }
+    
+    func getMovieListPaginate() {
+        self.page += 1
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.95)
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        viewModel.getMovieList(page: self.page) { data in
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
+            self.movieListModal?.results.append(contentsOf: data.results)
             self.movieListTV.reloadData()
         }
     }
@@ -77,6 +91,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let dataModel = movieListModal else {return}
         let dataForIndex = isFiltering ? filteredList[indexPath.row] : dataModel.results[indexPath.row]
         getMovieDetails(movieID: dataForIndex.id)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let cell = movieListTV.visibleCells.last as! MovieListTVC
+        if cell.movieNameLbl.text == movieListModal?.results.last?.title {
+            getMovieListPaginate()
+        }
     }
     
     //MARK: - Searchbar delegate methods
