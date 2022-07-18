@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let imagePath = dataForIndex.posterPath
         cell.movieImage.sd_setImage(with: URL(string: Constants.imageBaseUrl+imagePath))
         cell.movieNameLbl.text = dataForIndex.originalTitle
-        cell.movieRatingLbl.text = "★ "+dataForIndex.voteAverage+" & "+dataForIndex.voteCount+" counts"
+        cell.movieRatingLbl.text = "★ \(dataForIndex.voteAverage) & \(dataForIndex.voteCount) counts"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
